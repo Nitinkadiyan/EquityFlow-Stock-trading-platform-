@@ -19,7 +19,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin : "https://equityflow-stock-trading-platform-21.onrender.com",
+  origin : "https://equityflow-stock-frontend.onrender.com",
   credentials:true,
 }));
 
