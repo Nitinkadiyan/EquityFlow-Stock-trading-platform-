@@ -18,7 +18,7 @@ const handleLogout = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const res = await xHost.post("/auth/signup", {
+      const res = await xHost.post("/signup", {
         email,
         password,
       });
