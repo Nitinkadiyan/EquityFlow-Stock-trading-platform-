@@ -21,7 +21,7 @@ export default function Login({ setAccessToken }) {
       // If backend only sets cookie and returns a message, we still redirect.
       alert(res.data?.message || "Login successful");
       // redirect to dashboard (dashboard runs on 3001 in your setup)
-      window.location.href = "http://localhost:3001";
+      window.location.href = "https://equityflow-stock-trading-platform-svt3.onrender.com";
     } catch (err) {
       console.error("Login error:", err);
       alert(err.response?.data?.error || "Login failed");
