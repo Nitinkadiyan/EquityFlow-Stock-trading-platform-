@@ -11,7 +11,7 @@ import PricePage from './landing_page/pricing/PricingPage';
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/footer';
 import NotFound from './landing_page/NotFound';
-import Login from './landing_page/LoginPage/Login';
+import Login from './landing_page/LoginPage/login';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
