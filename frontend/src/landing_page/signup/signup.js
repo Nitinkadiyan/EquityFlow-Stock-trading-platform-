@@ -13,7 +13,7 @@ const handleLogout = () => {
   document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
 
   // redirect to login page
-  window.location.href = "http://localhost:3000/login";
+  window.location.href = "https://equityflow-stock-frontend.onrender.com/login";
 };
   const handleSignup = async (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const handleLogout = () => {
       const res = await xHost.post("/signup", {
         email,
         password,
-      });
+      },{withCredentials :true});
 
       console.log("Signup success:", res.data);
       alert("Signup successful! Redirecting to login...");

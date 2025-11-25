@@ -8,7 +8,7 @@ export default function Login({ setAccessToken }) {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await xHost.post("/login", { email, password });
+      const res = await xHost.post("/login", { email, password },{withCredentials :true});
 
       // If backend returns accessToken (full auth), store it:
       if (res.data?.accessToken) {
