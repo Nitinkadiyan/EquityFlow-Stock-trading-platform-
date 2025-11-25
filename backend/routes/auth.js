@@ -3,6 +3,7 @@ const router = express.Router();
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../model/User");
+const authMiddleware = require("../middleware/authMiddleware");
 
 
 
@@ -65,4 +66,22 @@ router.post("/login", async (req, res) => {
   }
 });
 
+router.post("/logout", (req, res) => {
+  res.clearCookie("sessionToken", {
+    path: "/",
+    httpOnly: true,
+    sameSite: "none",
+    secure: true,
+  });
+
+  return res.status(200).json({ message: "Logout successful" });
+});
+
+
+router.get("/me", authMiddleware, (req, res) => {
+  res.status(200).json({
+    success: true,
+    user: req.user,
+  });
+});
 module.exports = router;
