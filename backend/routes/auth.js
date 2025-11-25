@@ -4,14 +4,15 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const User = require("../model/User");
 
-// use your existing secrets
-const ACCESS_SECRET = process.env.ACCESS_TOKEN_SECRET;
+
 
 // your existing cookie options
 const cookieOptions = {
-  httpOnly: false,
+  httpOnly: true,
   secure: true,
-  sameSite: "none"
+  sameSite: "none",
+  path:"/",
+  expires:new Date(Date.now()+7*24*60*60*1000),
 };
 
 // ======================
@@ -51,14 +52,14 @@ router.post("/login", async (req, res) => {
     if (!match) return res.status(400).json({ error: "Invalid password" });
 
     // create 1-day JWT
-    const token = jwt.sign({ id: user._id }, ACCESS_SECRET, {
+    const token = jwt.sign({ id: user._id }, process.env.ACCESS_TOKEN_SECRET, {
       expiresIn: "1d"
     });
 
     // save token in cookie
-    res.cookie("token", token, cookieOptions);
+    res.cookie("sessiontoken", token, cookieOptions);
 
-    return res.json({ message: "Login success" });
+    return res.status(200).json({ message: "Login success" });
   } catch (err) {
     res.status(500).json({ error: "Server error" });
   }
