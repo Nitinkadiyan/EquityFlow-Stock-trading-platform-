@@ -6,7 +6,7 @@ import Home from './components/Home';
 
 import {BrowserRouter,Route,Routes}from "react-router-dom";
 
-if (!document.cookie.includes("token")) {
+if (!document.cookie.includes("sessiontoken")) {
   window.location.href = "https://equityflow-stock-frontend.onrender.com/signup";
 }
 const root = ReactDOM.createRoot(document.getElementById('root'));
