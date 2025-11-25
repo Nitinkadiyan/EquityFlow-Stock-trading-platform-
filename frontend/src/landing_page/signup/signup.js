@@ -8,13 +8,6 @@ const redirectLogin=async ()=>{
    window.location.href = "/login";
 
 }
-const handleLogout = () => {
-  // delete cookie
-  document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
-
-  // redirect to login page
-  window.location.href = "https://equityflow-stock-frontend.onrender.com/login";
-};
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
@@ -66,8 +59,7 @@ const handleLogout = () => {
 
                 <button className='btn p-2 btn-primary mb-5'type="submit"onClick={handleSignup}style={{ width: "20%", margin: "0 auto",backgroundColor:"#003f66" }}>SignUp Now</button>
                         <button className='btn p-2 btn-primary mb-5 mx-5'type="submit"onClick={redirectLogin}style={{ width: "20%", margin: "0 auto",backgroundColor:"#003f66" }}>Login</button>
-                        {document.cookie.includes("token") && (
-                <button className='btn p-2 btn-primary mb-5 mx-5'style={{ width: "20%", margin: "0 auto",backgroundColor:"#003f66" }}onClick={handleLogout}>Logout</button>)}
+                    
                  </form>
                   
           
