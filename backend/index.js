@@ -18,10 +18,15 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-app.use(cors({
-  origin :["https://equityflow-stock-frontend.onrender.com","https://equityflow-stock-trading-platform-svt3.onrender.com"] ,
-  credentials:true,
-}));
+app.use(
+  cors({
+    origin: [
+      "https://equityflow-stock-frontend.onrender.com",
+      "https://equityflow-stock-trading-platform-svt3.onrender.com"
+    ],
+    credentials: true,
+  })
+);
 
 app.use("/api/auth",authRoutes);
 // app.get("/addHoldings", async (req, res) => {

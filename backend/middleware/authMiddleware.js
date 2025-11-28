@@ -1,14 +1,14 @@
 const jwt = require("jsonwebtoken");
 
 module.exports = (req, res, next) => {
-  const token = req.cookies.sessionToken;
+  const token = req.cookies.token;
 
   if (!token) {
     return res.status(401).json({ error: "Not authenticated" });
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.accessTokenSecret);
+    const decoded = jwt.verify(token, process.env.ACCESS_TOKEN_SECRET);
     req.user = decoded;
     next();
   } catch (err) {

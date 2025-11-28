@@ -58,7 +58,7 @@ router.post("/login", async (req, res) => {
     });
 
     // save token in cookie
-    res.cookie("sessiontoken", token, cookieOptions);
+    res.cookie("token", token, cookieOptions);
 
     return res.status(200).json({ message: "Login success" });
   } catch (err) {
@@ -67,7 +67,7 @@ router.post("/login", async (req, res) => {
 });
 
 router.post("/logout", (req, res) => {
-  res.clearCookie("sessionToken", {
+  res.clearCookie("token", {
     path: "/",
     httpOnly: true,
     sameSite: "none",
