@@ -30,7 +30,7 @@ const redirectLogin=async ()=>{
 
     return (
        <>
-        <div className="container">
+        <div className="container mt-5">
             <div className="row">
                 <div className="col-8 offset-2">
                     <h1  className="mt-5 mb-5"style={{fontFamily:"poppins",color:"#003f66"}}>Create Your Account</h1>
