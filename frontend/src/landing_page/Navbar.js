@@ -1,11 +1,12 @@
 
 import LogoIcon from "./LogoIcon";
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 import React, { useState } from 'react';
 
 export default function Navbar() {
+  const navigate = useNavigate();
   const [hoveredNav, setHoveredNav] = useState(null);
 
   const navItems = [
@@ -169,8 +170,8 @@ export default function Navbar() {
           </div>
 
           <div className="navbar-right">
-            <button className="btn-login">Login</button>
-            <button className="btn-signup">Signup</button>
+            <button className="btn-login "onClick={()=> navigate("/login")}>Login</button>
+            <button className="btn-signup"onClick={()=> navigate("/signup")}>Signup</button>
           </div>
         </div>
       </div>

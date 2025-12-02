@@ -11,7 +11,7 @@ import PricePage from './landing_page/pricing/PricingPage';
 import Navbar from './landing_page/Navbar';
 import Footer from './landing_page/footer';
 import NotFound from './landing_page/NotFound';
-import Login from './landing_page/LoginPage/login';
+import Login from './landing_page/LoginPage/login.js';
 import axios from "axios";
 axios.defaults.withCredentials =true;
 
@@ -27,7 +27,7 @@ root.render(
     <Route path="/pricing"element = {<PricePage/>}/>
     <Route path="/support"element = {<SupportPage/>}/>
     <Route path="*"element = {<NotFound/>}/>
- <Route path="/login"element = {<Login/>}/>
+ <Route path="/Login"element = {<Login/>}/>
 
 
   </Routes>

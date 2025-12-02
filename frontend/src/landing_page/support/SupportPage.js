@@ -6,7 +6,7 @@ function SupportPage() {
     return ( 
     <>
     <Hero/>
-    <Ticket/>
+    
     </>
      );
 }

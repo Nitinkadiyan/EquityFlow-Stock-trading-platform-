@@ -3,7 +3,7 @@ import LogoIcon from "./LogoIcon";
 function Footer() {
   return (
     <footer style={{ backgroundColor: "rgb(250, 250, 250)" }}>
-      <div className="container border-top mt-5">
+      <div className="container border-top ">
         <div className="row mt-5">
           <div className="col">
             <div> <LogoIcon size={30} color="#2BC0A4" />
